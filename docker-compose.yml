@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - host
+    environment:
+      MONGO_INITDB_DATABASE: flask_db # Initialize the database on container start
+  myapp:
+    build: /home/sameer/python-flask
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/flask_db
+    networks:
+      - host
+    ports:
+      - "5000:5000"
+volumes:
+  mongo-data:
+networks:
+  host: 
