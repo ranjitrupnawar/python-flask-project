@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: sameerpatlekar/python-flask-app:v3
+        image: ranjitrupnawar/python:v1
         resources:
           limits:
             memory: "256Mi"
