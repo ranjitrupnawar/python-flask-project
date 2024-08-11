@@ -11,7 +11,7 @@ services:
     environment:
       MONGO_INITDB_DATABASE: flask_db # Initialize the database on container start
   myapp:
-    build: /home/sameer/python-flask
+    build: /home/ranjit/python-flask
     depends_on:
       - mongo
     environment:
